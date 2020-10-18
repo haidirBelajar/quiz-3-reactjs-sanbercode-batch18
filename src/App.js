@@ -17,3 +17,5 @@ function App() {
 }
 
 export default App;
+
+// maaf bang ga kelar gue ga ngerti udah pusing juga :'(

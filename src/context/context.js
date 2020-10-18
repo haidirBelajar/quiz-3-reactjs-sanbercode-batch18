@@ -4,20 +4,17 @@ import Axios from 'axios';
 export const LoginContext = createContext();
 
 export const LoginProvider = props => {
-   const [username, setUsername] = useState("");
-   const [password, setPassword] = useState("");
-
-    const onChangeUsername = (e) =>{
-        const value = e.target.value;
-    }
-
-    const onChangePassword = (e) =>{
-        const value = e.target.value;
-    }
+    const [login, setLogin] = useState(null)
+    const [username, setUsername] = useState({
+        inputUsername : ""
+    });
+    const [password, setPassword] = useState({
+       inputPassword : ""
+    })
 
 
         return (
-            <LoginContext.Provider value={[username,setUsername, password, setPassword]}>
+            <LoginContext.Provider value={[login,setLogin,username,setUsername, password, setPassword]}>
               {props.children}
             </LoginContext.Provider>
           );

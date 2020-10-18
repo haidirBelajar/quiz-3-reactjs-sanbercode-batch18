@@ -35,7 +35,6 @@ const MLView = () => {
             let value = event.target.value
             switch (typeOfInput){
               case "title":
-              const testing = {...input, title: value}
               {
                 setInput({...input, inputTitle: value});
                 break
@@ -120,14 +119,9 @@ const MLView = () => {
               Axios.get(`http://backendexample.sanbercloud.com/api/movies/${idMovie}`)
               .then(res => {
                 let dataMovie = res.data
+                console.log(dataMovie)
                 setInput({
-                  title: dataMovie.title,
-                  description: dataMovie.description,
-                  year: dataMovie.year,
-                  duration: dataMovie.duration,
-                  genre: dataMovie.genre,
-                  rating: dataMovie.rating,
-                  imageurl: dataMovie.rating
+                  title: dataMovie.title
                 })
               })
             }
